@@ -1,0 +1,29 @@
+{
+  "name": "financial-advisor-ai-agent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx tsx app.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@auth0/ai-langchain": "^3.2.0",
+    "@langchain/core": "^0.3.62",
+    "@langchain/google-genai": "^0.2.14",
+    "@langchain/langgraph": "^0.2.74",
+    "@langchain/openai": "^0.5.18",
+    "dotenv": "^16.6.1",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "langchain": "^0.3.29",
+    "passport": "^0.7.0",
+    "passport-auth0": "^1.4.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.10"
+  }
+}
