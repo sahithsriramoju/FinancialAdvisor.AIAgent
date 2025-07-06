@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Advisor AI agent</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Financial Advisor AI Agent</h1>
+                <p>Get financial insights and customized financial advise</p>
+                <div class="auth-links">
+                    <% if (locals.user) { %>
+                        <span class="user-info">Logged in as: <%= user.displayName || user.name || user.nickname %></span>
+                        <a href="/logout" class="auth-btn logout-btn">Logout</a>
+                    <% } else { %>
+                        <a href="/login" class="auth-btn login-btn">Login</a>
+                    <% } %>
+                    </div>
+            </header>
+            <main>
+                <div class="chat-container">
+                    <div class="chat-messages" id="chat-messages">
+                        <% if (chatHistory && chatHistory.length > 0) { %>
+                          <% chatHistory.forEach(message => { %>
+                            <div class="message <%= message.role %>">
+                                <div class="message-content">
+                                    <% if (message.role === 'user') { %>
+                                        <div class="message-avatar">You</div>
+                                    <% } else if (message.role="assistant") { %>
+                                        <div class="message-avatar">AI</div>
+                                    <% } %>
+                                    <div class="message-text"><%= message.content %></div>
+                                </div>
+                            </div>
+                        <% }); %>
+                        <% } else { %>
+                            <div class = "welcome-message">
+                                <h3>Welcome to Financial Advisor AI Agent</h3>
+                                <p> Ask questions about your financial data.</p>
+                                <% if(!locals.user) { %>
+                                    <p>Please <a href="/login">login</a> to start a conversation</p>
+                                <% } %>
+                            </div>
+                        <% } %>
+                    </div>
+                    <% if(locals.user) { %>
+                        <form action="/ask" method="POST" class="chat-input-form">
+                            <div class="chat-box">
+                                <textarea
+                                id="question"
+                                name="question"
+                                rows="2"
+                                placeholder="Ask about your finances..."
+                                required
+                                autofocus>
+                                </textarea>
+                                <button type="submit" class="btn send-btn">Send</button>
+                            </div>
+                        </form>
+                        <form action="/clear" method="POST" class="clear-chat-form">
+                            <button type="submit" class="btn clear-btn">New Chat</button>
+                        </form>
+                    <% } else { %>
+                        <div class="login-prompt">
+                            <a href="/login" class="btn login-prompt-btn">Login to Ask Questions</a>
+                        </div>
+                    <% } %>
+                </div>
+            </main>
+        </div>
+     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatMessages = document.getElementById('chat-messages');
+            if(chatMessages){
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        });
+     </script>
+    </body>
+</html>

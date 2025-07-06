@@ -1,0 +1,18 @@
+Date,Description,Category,Amount,Type,Account
+2025-06-01,Starbucks,Food & Drink,350,Debit,ICICI Bank
+2025-06-01,Uber,Ride Share,450,Debit,HDFC Bank
+2025-06-02,Zomato,Food Delivery,780,Debit,ICICI Bank
+2025-06-03,Netflix,Subscriptions,499,Debit,HDFC Bank
+2025-06-04,Salary,Income,75000,Credit,HDFC Bank
+2025-06-05,Amazon,Shopping,2500,Debit,HDFC Bank
+2025-06-06,Swiggy,Food Delivery,620,Debit,ICICI Bank
+2025-06-07,Airtel Postpaid,Bills,999,Debit,HDFC Bank
+2025-06-10,BookMyShow,Entertainment,600,Debit,ICICI Bank
+2025-06-11,Flipkart,Shopping,1899,Debit,HDFC Bank
+2025-06-12,OLA,Ride Share,390,Debit,HDFC Bank
+2025-06-15,SIP Mutual Fund,Investments,5000,Debit,HDFC Bank
+2025-06-20,Domino's,Food & Drink,430,Debit,ICICI Bank
+2025-06-22,Electricity Bill,Bills,1200,Debit,HDFC Bank
+2025-06-25,Big Bazaar,Grocery,2100,Debit,ICICI Bank
+2025-06-27,Interest Credited,Income,1500,Credit,HDFC Bank
+2025-06-29,Swiggy,Food Delivery,850,Debit,HDFC Bank
